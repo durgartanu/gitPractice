@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>HF-Tutorial-1</title>
+		<script type="text/javascript" src="rockCookie.js"></script>
+		<script>
+			function touch(){
+				//alert(document.body.clientWidth);
+				//alert(document.body.clientHeight);
+				var userName = prompt("Enter User name", "Enter::");
+				writeCookie("irock_userName", userName, 1);
+				document.getElementById("place").innerHTML= "Entered user name : "+readCookie("irock_userName");
+				document.getElementById("rock").src="smiling_rock.jpg";
+				<!--window.setTimeout(alert("wake me up!!", 20000));-->
+			}
+			
+			function resize(){
+				document.getElementById("rock").style.height = (document.body.clientHeight-100)*0.9;
+				document.getElementById("rock").style.width = (document.body.clientWidth-100)*0.9;
+			}
+		</script>
+	</head>
+	
+	<body onresize="resize();">
+		<div style="text-align:center;">
+			<img id="rock"  src="rock.jpg" alt="Rock Image" onclick="touch();"/>			
+			<p id="place"></p>
+		</div>
+	</body>
+</html>
